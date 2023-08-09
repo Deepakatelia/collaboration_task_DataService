@@ -1,4 +1,4 @@
-# Authorization Data Service
+# Collaboration Tasks Data Service
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/atelia/soundheart/services/data-services/authorization-data-service.git
+git remote add origin https://gitlab.com/atelia/soundheart/services/data-services/collaboration-tasks-data-service.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/atelia/soundheart/services/data-services/authorization-data-service/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/atelia/soundheart/services/data-services/collaboration-tasks-data-service/-/settings/integrations)
 
 ## Collaborate with your team
 

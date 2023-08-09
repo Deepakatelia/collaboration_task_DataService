@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  NAME: authorization-data-service
+  NAME: collaboration-tasks-data-service
 
 build-dev:
   stage: build
@@ -53,8 +53,8 @@ deploy-dev:
     - gcloud container clusters get-credentials event-driven-cluster --zone us-central1-c --project $PROJECT_ID
   script:
     - kubectl apply -f k8s/secret.yaml
-    - helm upgrade authorization-data-helm k8s --install --set image.repository=gcr.io/$PROJECT_ID/$NAME --set image.tag=$CI_COMMIT_SHORT_SHA
-    - kubectl describe deployment authorization-data-helm
+    - helm upgrade collaboration-tasks-data-helm k8s --install --set image.repository=gcr.io/$PROJECT_ID/$NAME --set image.tag=$CI_COMMIT_SHORT_SHA
+    - kubectl describe deployment collaboration-tasks-data-helm
   needs:
     - build-dev
   only:
@@ -76,8 +76,8 @@ deploy-cvi:
     - gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project $PROJECT_ID
   script:
     - kubectl apply -f k8s/secret.yaml
-    - helm upgrade authorization-data-helm k8s --install --set image.repository=gcr.io/$PROJECT_ID/$NAME --set image.tag=$CI_COMMIT_SHORT_SHA
-    - kubectl describe deployment authorization-data-helm
+    - helm upgrade collaboration-tasks-data-helm k8s --install --set image.repository=gcr.io/$PROJECT_ID/$NAME --set image.tag=$CI_COMMIT_SHORT_SHA
+    - kubectl describe deployment collaboration-tasks-data-helm
   needs:
     - build-cvi
   tags:
